@@ -1,0 +1,151 @@
+:root {
+    --top-bar-height: 120px;
+    --footer-height: 150px;
+}
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: lightgrey;
+}
+
+.top-bar {
+    height: var(--top-bar-height);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.ml-50 {
+    margin-left: 50px;
+}
+
+.main-container {
+    height: calc(90vh - var(--top-bar-height) - var(--footer-height));
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+html, body {
+    height: 100%;
+}
+
+.footer {
+    height: var(--footer-height);
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.answer-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+mjx-container {
+    font-size: 117.2%;
+}
+
+.diff {
+    margin-left: 9px;
+    font-weight: bold;
+}
+
+.good-diff {
+    color: darkgreen;
+}
+
+.good-diff::before {
+    content: 'ì';
+    font-family: wingdings;
+    font-weight: normal;
+    margin-left: 12px;
+    margin-right: 6px;
+}
+
+.bad-diff {
+    color: darkred;
+}
+
+.bad-diff::before {
+    content: 'î';
+    font-family: wingdings;
+    font-weight: normal;
+    margin-left: 12px;
+    margin-right: 6px;
+}
+
+.history-box {
+    height: 75px;
+    width: 75px;
+    border-radius: 4px;
+    color: white;
+    font-size: 18px;
+    background-color: #C6C6C6;
+    margin-left: 12px;
+    margin-right: 12px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+.history-correct {
+    background-color: darkgreen;
+}
+
+.history-incorrect {
+    background-color: darkred;
+}
+
+.history-correct:hover {
+    cursor: pointer;
+    background-color: #007A00;
+}
+
+.history-incorrect:hover {
+    cursor: pointer;
+    background-color: #A50000;
+}
+
+.history-correct .history-label::before {
+    content: 'ä';
+    font-family: wingdings;
+    font-weight: normal;
+    margin-right: 5px;
+}
+
+.history-incorrect .history-label::before {
+    content: 'æ';
+    font-family: wingdings;
+    font-weight: normal;
+    margin-right: 5px;
+}
+
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+a {
+    text-decoration: none !important;
+}

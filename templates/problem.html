@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Linear Equations</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"/>
+
+        <!-- Scripts -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div class="top-bar">
+            <p class="ml-50">
+                Problem Rating: <b id="problem-rating">{{ problem_rating }}</b><br>
+                <span style="font-size: 14px;">Problem ID: <b id="problem-id">{{ problem_id }}</b></span>
+            </p>
+        </div>
+        
+        <div class="main-container">
+           <div>
+                <div id="math-equation">$${{ problem_latex }}$$</div>
+                <div class="answer-section">
+                   <span style="margin-top: 2px;">Your answer was:&nbsp;&nbsp;</span>
+                    <div>\[{{ variable }} = {}\]</div>
+                    <input id="input-equation" style="width: 100px; font-size: 24px;" value="{{ user_answer }}" disabled />
+                </div>
+                <div class="answer-section">
+                   <span>The correct answer was:&nbsp;&nbsp;</span>
+                    <div>\[{{ variable }} = {{ solution_latex }}\]</div>
+                </div>
+           </div>
+        </div>
+        
+        <div class="footer">
+            
+        </div>
+
+        <script src="{{ url_for('static', filename='main.js') }}"></script>
+        <script src="{{ url_for('static', filename='events.js') }}"></script>
+    </body>
+</html>

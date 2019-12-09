@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Linear Equations</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"/>
+
+        <!-- Scripts -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div class="top-bar">
+            <p class="ml-50">
+                Current Rating: <b id="current-rating">{{ rating }}</b> <span id="rating-diff" class="diff"></span><br>
+                <span style="font-size: 14px;">Problem Rating: <b id="problem-rating">{{ problem_rating }}</b></span>
+            </p>
+        </div>
+        
+        <div class="main-container">
+           <div>
+                <div id="math-equation"></div>
+                <div class="answer-section">
+                    <div id="math-identifier"></div>
+                    <input id="input-equation" style="width: 100px; font-size: 24px;" />
+                </div>
+           </div>
+        </div>
+        
+        <div class="footer">
+            {% for index in range(0, 10) %}
+            <a id="history-{{ 9 - index }}-link" class="no-select" target="_blank">
+                <div class="history-box no-select" id="history-{{ 9 - index }}"></div>
+            </a>
+            {% endfor %}
+        </div>
+
+        <script src="{{ url_for('static', filename='main.js') }}"></script>
+        <script src="{{ url_for('static', filename='events.js') }}"></script>
+        <script>
+            function main() {
+                loadSettings();
+            }
+
+            main();
+        </script>
+    </body>
+</html>
